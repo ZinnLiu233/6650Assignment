@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2407416b-8cc2-42da-a7ac-aa1e458dfedd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Server/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/.idea/libraries/Maven__com_google_code_gson_gson_2_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/Send.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/RPCConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/RPCConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/Entity/LifeRide.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/Entity/LifeRide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/SkierServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/SkierServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/org/A1Server/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/org/A1Server/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/A2ServerV1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/A2ServerV1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/Entity/Skier.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/Entity/Skier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667003483000</updated>
       <workItem from="1667003484242" duration="1970000" />
-      <workItem from="1667005469630" duration="4452000" />
+      <workItem from="1667005469630" duration="5343000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-package org.A1Server;
+package A2Server.A1Server;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

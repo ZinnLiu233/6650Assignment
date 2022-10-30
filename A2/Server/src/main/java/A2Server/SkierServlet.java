@@ -1,3 +1,5 @@
+package A2Server;
+
 import Entity.LifeRide;
 import com.google.gson.Gson;
 import java.io.PrintWriter;

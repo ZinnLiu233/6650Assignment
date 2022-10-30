@@ -2,9 +2,10 @@ package Entity;
 
 public class Skier {
   private int resortId;
+  private int skierId;
   private String seasonId;
   private String dayId;
-  private int skierId;
+
 
   public int getResortId() {
     return resortId;

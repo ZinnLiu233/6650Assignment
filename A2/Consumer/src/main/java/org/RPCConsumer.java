@@ -10,6 +10,7 @@ import com.rabbitmq.client.DeliverCallback;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
@@ -44,15 +45,15 @@ public class RPCConsumer implements AutoCloseable{
           DeliverCallback deliverCallback = (consumerTag, delivery) ->{
             String msg = new String(delivery.getBody(), StandardCharsets.UTF_8);
             JsonObject jsonObject = gson.fromJson(msg, JsonObject.class);
-            Integer mapKey = Integer.valueOf(String.valueOf(jsonObject.get("skierId")));
+            Integer skierId = Integer.valueOf(String.valueOf(jsonObject.get("skierId")));
 
             // put key and values into map
-            if(map.containsKey(mapKey)){
-              map.get(mapKey).add(jsonObject);
+            if(map.containsKey(skierId)){
+              map.get(skierId).add(jsonObject);
             }else{
               List<JsonObject> values = new ArrayList<>();
               values.add(jsonObject);
-              map.put(mapKey, values);
+              map.put(skierId, values);
             }
             channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
           };
