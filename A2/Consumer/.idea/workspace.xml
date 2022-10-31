@@ -5,12 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2407416b-8cc2-42da-a7ac-aa1e458dfedd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Server/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Server/src/main/java/A2Server/RMQChannelPooledFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Server/.idea/artifacts/A2Server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A1/A1Client/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../A1/A1Client/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A1/A1Client/target/classes/bean/defaultConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../A1/A1Client/target/classes/bean/defaultConstants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Server/A2ServerV1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/A2ServerV1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/artifacts/A1Server_war/A1Server_war.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/artifacts/A1Server_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/artifacts/A1Server_war_exploded/WEB-INF/classes/Entity/LifeRide.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/artifacts/A1Server_war_exploded/WEB-INF/classes/SkierServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/artifacts/A1Server_war_exploded/WEB-INF/classes/org/A1Server/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/artifacts/A1Server_war_exploded/WEB-INF/lib/gson-2.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/artifacts/A1Server_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/out/artifacts/A1Server_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/A2Server/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/A2Server/Send.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/A2Server/SkierServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/A2Server/SkierServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/Send$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/Send.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/SkierServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/org/A1Server/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/test-classes/org/A1Server/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +96,7 @@
       <updated>1667003483000</updated>
       <workItem from="1667003484242" duration="1970000" />
       <workItem from="1667005469630" duration="5575000" />
+      <workItem from="1667182697102" duration="629000" />
     </task>
     <servers />
   </component>
