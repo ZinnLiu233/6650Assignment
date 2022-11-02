@@ -36,7 +36,7 @@ public class CSVWriter {
   }
 
   public void writeCsv() {
-    File csvfile = new File("src/part2Records.csv");
+    File csvfile = new File("src/Ec2part2Records.csv");
     try {
       BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(csvfile, true));
       bufferedWriter.write("startTime:" + "," + "requestType" + ","
