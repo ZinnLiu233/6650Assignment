@@ -2,38 +2,17 @@ import Entity.LifeRide;
 import com.google.gson.Gson;
 import java.io.PrintWriter;
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
+@WebServlet(name = "SkierServlet", value = "/skiers/*")
 public class SkierServlet extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    PrintWriter out = response.getWriter();
-    response.setContentType("application/json");
-    response.setCharacterEncoding("UTF-8");
-    String urlPath = request.getPathInfo();
-
-    if (urlPath == null || urlPath.isEmpty()) {
-      response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-      String jsonString = new Gson().toJson("missing paramterers");
-      out.write(jsonString);
-      return;
-    }
-
-    String[] urlParts = urlPath.split("/");
-
-    if (!isUrlValid(urlParts)) {
-      response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-      String jsonString = new Gson().toJson("invalid url");
-      out.write(jsonString);
-    } else {
-      response.setStatus(HttpServletResponse.SC_OK);
-      String jsonString = new Gson().toJson("get successfully");
-      out.write(response.getStatus() + jsonString);
-    }
-
+      //
   }
 
   @Override
@@ -59,9 +38,6 @@ public class SkierServlet extends HttpServlet {
           res.setStatus(HttpServletResponse.SC_NOT_FOUND);
           res.getWriter().write(gson.toJson("data not found"));
       } else {
-//          res.setStatus(HttpServletResponse.SC_OK);
-//          // do any sophisticated processing with urlParts which contains all the url params
-//          // TODO: process url params in `urlParts`
         try{
           LifeRide lifeRide = new LifeRide(217, 21);
           String lifeRideJson = gson.toJson(lifeRide);

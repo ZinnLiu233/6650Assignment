@@ -39,8 +39,9 @@ public class Client {
   private static final int numSinglePosts = 1000;
   private static BlockingQueue<ResponseRecord> responseRecords = new ArrayBlockingQueue<>(numTotalPosts);
   private static BlockingQueue<SkierThread> allThreads =  new ArrayBlockingQueue<>(300);
-  private static final String baseUrl = "http://localhost:8080/A2Server_war_exploded/";
-  private static final String ec2Url = "http://35.93.3.155:80/A1Server_war/";
+  private static final String baseUrl = "http://localhost:8080/A1Server_war/";
+  private static final String baseUrl2 = "http://localhost:8080/A2ServerV1_war_exploded/";
+  private static final String ec2Url = "http://35.93.3.155:8080/A1Server_war/";
   // http://35.93.3.155:8080/A1Server_war/skiers/12/seasons/2019/day/1/skier/123
 
   public static CSVWriter csvWriter;
@@ -69,9 +70,13 @@ public class Client {
       int needTask = numTotalPosts / numSinglePosts;
       // 32 Thread
       for(int i = 0; i < needTask; i++ ){
+//        SkierThread skierThread = new SkierThread(numSkierMin, numSkierMax, numResort, seasonId,
+//            dayId, 0, 360, numSinglePosts, numLift, singleCountDown, totalCountDown,
+//            responseRecords, baseUrl);
+
         SkierThread skierThread = new SkierThread(numSkierMin, numSkierMax, numResort, seasonId,
             dayId, 0, 360, numSinglePosts, numLift, singleCountDown, totalCountDown,
-            responseRecords, baseUrl);
+            responseRecords, ec2Url);
         // enough for sending post
         if(totalCountDown == null){
           break;
