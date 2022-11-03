@@ -41,7 +41,7 @@ public class Client {
   private static BlockingQueue<SkierThread> allThreads =  new ArrayBlockingQueue<>(300);
   private static final String baseUrl = "http://localhost:8080/A1Server_war/";
   private static final String baseUrl2 = "http://localhost:8080/A2ServerV1_war_exploded/";
-  private static final String ec2Url = "http://35.90.189.13:8080/Server_war/";
+  private static final String ec2Url = "http://35.90.189.13:8080/A1Server_war/";
   // http://35.93.3.155:8080/A1Server_war/skiers/12/seasons/2019/day/1/skier/123
 
   public static CSVWriter csvWriter;
@@ -85,7 +85,7 @@ public class Client {
         allThreads.add(skierThread);
       }
       executorService.shutdown();
-      executorService.awaitTermination(30, TimeUnit.SECONDS);
+      executorService.awaitTermination(10, TimeUnit.MINUTES);
 
     }catch (InterruptedException e){
       e.printStackTrace();

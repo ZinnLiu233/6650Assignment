@@ -98,6 +98,7 @@ public class SkierThread extends Thread{
         }
         if(totalLatch != null){
           totalLatch.countDown();
+          System.out.println(totalLatch);
         }
       }
       } catch (ApiException e) {
