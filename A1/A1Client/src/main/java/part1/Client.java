@@ -42,6 +42,7 @@ public class Client {
   private static final String baseUrl = "http://localhost:8080/A1Server_war/";
   private static final String baseUrl2 = "http://localhost:8080/A2ServerV1_war_exploded/";
   private static final String ec2Url = "http://35.90.189.13:8080/A1Server_war/";
+  private static final String ec2Url2 = "http://35.90.189.13:8080/A2ServerV1_war/"
   // http://35.93.3.155:8080/A1Server_war/skiers/12/seasons/2019/day/1/skier/123
 
   public static CSVWriter csvWriter;
@@ -59,8 +60,8 @@ public class Client {
     showAllinfo(walltime);
 
     // part2
-    csvWriter = new CSVWriter(responseRecords, walltime);
-    csvWriter.writeCsv();
+    // csvWriter = new CSVWriter(responseRecords, walltime);
+    // csvWriter.writeCsv();
     csvWriter.showTheRecordInfo();
   }
 
@@ -76,7 +77,7 @@ public class Client {
 
         SkierThread skierThread = new SkierThread(numSkierMin, numSkierMax, numResort, seasonId,
             dayId, 0, 360, numSinglePosts, numLift, singleCountDown, totalCountDown,
-            responseRecords, ec2Url);
+            responseRecords, baseUrl2);
         // enough for sending post
         if(totalCountDown == null){
           break;

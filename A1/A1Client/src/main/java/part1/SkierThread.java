@@ -90,6 +90,7 @@ public class SkierThread extends Thread{
             }
           }
         }
+
         if(isFailed){
           // add failed record into records
           this.failure ++;

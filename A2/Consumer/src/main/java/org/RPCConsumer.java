@@ -16,8 +16,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-public class RPCConsumer implements AutoCloseable{
-  private final static String QUEUE = "skier_queue";
+public class RPCConsumer{
+  private final static String QUEUE = "rmq_queue";
   public static Gson gson = new Gson();
   public static ConcurrentHashMap<Integer, List<JsonObject>> map = new ConcurrentHashMap<>();
   static Connection connection;
@@ -25,7 +25,7 @@ public class RPCConsumer implements AutoCloseable{
   public static void main(String[] args) throws IOException, TimeoutException {
     // init the factory
     ConnectionFactory factory = new ConnectionFactory();
-    factory.setHost("localhost");
+    factory.setHost("35.90.189.13");
     factory.setPort(5672);
     factory.setUsername("guest");
     factory.setPassword("guest");
@@ -37,8 +37,10 @@ public class RPCConsumer implements AutoCloseable{
       @Override
       public void run() {
         try{
+          System.out.println(map.size());
           final Channel channel = connection.createChannel();
           channel.queueDeclare(QUEUE, false, false, false, null);
+          // Per consumer limit
           channel.basicQos(1);
 
           // call back function
@@ -65,13 +67,9 @@ public class RPCConsumer implements AutoCloseable{
       }
     };
 
-    for(int i = 0; i < 32; i ++){
+    for(int i = 0; i < 10; i ++){
       Thread thread = new Thread(runnable);
       thread.start();
     }
-  }
-
-  public void close() throws Exception {
-    connection.close();
   }
 }
