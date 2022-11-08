@@ -25,19 +25,22 @@ public class RPCConsumer{
   public static void main(String[] args) throws IOException, TimeoutException {
     // init the factory
     ConnectionFactory factory = new ConnectionFactory();
-    factory.setHost("35.90.189.13");
+    factory.setHost("18.237.28.211");
+    // factory.setHost("localhost");
     factory.setPort(5672);
     factory.setUsername("guest");
     factory.setPassword("guest");
+    System.out.println("start consumer");
 
     // try connection
     connection = factory.newConnection();
+
+    //AWS AMI, target group, elb
 
     Runnable runnable = new Runnable() {
       @Override
       public void run() {
         try{
-          System.out.println(map.size());
           final Channel channel = connection.createChannel();
           channel.queueDeclare(QUEUE, false, false, false, null);
           // Per consumer limit
@@ -46,8 +49,11 @@ public class RPCConsumer{
           // call back function
           DeliverCallback deliverCallback = (consumerTag, delivery) ->{
             String msg = new String(delivery.getBody(), StandardCharsets.UTF_8);
+//            System.out.println(msg);
+
             JsonObject jsonObject = gson.fromJson(msg, JsonObject.class);
             Integer skierId = Integer.valueOf(String.valueOf(jsonObject.get("skierId")));
+            System.out.println(jsonObject);
 
             // put key and values into map
             if(map.containsKey(skierId)){
@@ -67,7 +73,7 @@ public class RPCConsumer{
       }
     };
 
-    for(int i = 0; i < 10; i ++){
+    for(int i = 0; i < 32; i ++){
       Thread thread = new Thread(runnable);
       thread.start();
     }

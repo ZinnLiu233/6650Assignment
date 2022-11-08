@@ -5,8 +5,44 @@
   <groupId>org.example</groupId>
   <artifactId>Consumer</artifactId>
   <version>1.0-SNAPSHOT</version>
+
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.2</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <!--运行jar包时运行的主类，要求类全名-->
+              <mainClass>org.RPCConsumer</mainClass>
+              <!-- 是否指定项目classpath下的依赖 -->
+              <addClasspath>true</addClasspath>
+              <!-- 指定依赖的时候声明前缀 -->
+              <classpathPrefix>./lib/</classpathPrefix>
+              <!--依赖是否使用带有时间戳的唯一版本号,如:xxx-1.3.0-20121225.012733.jar-->
+              <useUniqueVersions>false</useUniqueVersions>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+            <execution>
+               <id>copy</id>
+               <phase>package</phase>
+               <goals>
+                  <goal>copy-dependencies</goal>
+               </goals>
+               <configuration>
+                  <outputDirectory>${project.build.directory}/lib</outputDirectory>
+               </configuration>
+            </execution>
+          </executions>
+       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -17,7 +53,6 @@
       </plugin>
     </plugins>
   </build>
-  <packaging>jar</packaging>
 
   <name>Consumer</name>
   <url>http://maven.apache.org</url>
