@@ -10,13 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2407416b-8cc2-42da-a7ac-aa1e458dfedd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Consumer_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../A1/A1Client/src/Ec2part2Records.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../A1/A1Client/src/Ec2part2Records.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../A1/A1Client/src/main/java/part1/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A1/A1Client/src/main/java/part1/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../A1/A1Client/target/classes/part1/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../A1/A1Client/target/classes/part1/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/RPCConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/RPCConsumer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +92,7 @@
       <workItem from="1667791279787" duration="3972000" />
       <workItem from="1667848380791" duration="7707000" />
       <workItem from="1667858474705" duration="2016000" />
-      <workItem from="1667861544742" duration="2728000" />
+      <workItem from="1667861544742" duration="3776000" />
     </task>
     <servers />
   </component>
@@ -121,11 +117,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/RPCConsumer.java</url>
           <line>35</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/RPCConsumer.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

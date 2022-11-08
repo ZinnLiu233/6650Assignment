@@ -44,7 +44,7 @@ public class RPCConsumer{
           final Channel channel = connection.createChannel();
           channel.queueDeclare(QUEUE, false, false, false, null);
           // Per consumer limit
-          channel.basicQos(1);
+          channel.basicQos(10);
 
           // call back function
           DeliverCallback deliverCallback = (consumerTag, delivery) ->{

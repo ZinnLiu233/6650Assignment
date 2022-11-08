@@ -78,7 +78,7 @@ public class Client {
 
         SkierThread skierThread = new SkierThread(numSkierMin, numSkierMax, numResort, seasonId,
             dayId, 0, 360, numSinglePosts, numLift, singleCountDown, totalCountDown,
-            responseRecords, lbUrl);
+            responseRecords, ec2Url2);
         // enough for sending post
         if(totalCountDown == null){
           break;
