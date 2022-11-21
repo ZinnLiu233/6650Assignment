@@ -10,19 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b58cb135-0bb8-41f9-aab7-95a6c7877ba2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/A2ServerV1_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/A2ServerV1_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/LiftRide.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/RMQChannelPoolFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/SkierServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Consumer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Consumer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Consumer/src/main/java/org/RPCConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Consumer/src/main/java/org/RPCConsumer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +26,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -175,7 +164,10 @@
       <workItem from="1667685976930" duration="11085000" />
       <workItem from="1667849142249" duration="3040000" />
       <workItem from="1667858468451" duration="755000" />
-      <workItem from="1667863841633" duration="1197000" />
+      <workItem from="1667863841633" duration="1967000" />
+      <workItem from="1667873923531" duration="660000" />
+      <workItem from="1668412275987" duration="206000" />
+      <workItem from="1668471481341" duration="650000" />
     </task>
     <servers />
   </component>

@@ -10,8 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2407416b-8cc2-42da-a7ac-aa1e458dfedd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../A1/A1Client/src/Ec2part2Records.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../A1/A1Client/src/Ec2part2Records.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../A1/A1Client/src/main/java/part1/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A1/A1Client/src/main/java/part1/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A2ServerV1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../A2ServerV1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../A2ServerV1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../A2ServerV1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/RPCConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/RPCConsumer.java" afterDir="false" />
     </list>
@@ -92,7 +92,8 @@
       <workItem from="1667791279787" duration="3972000" />
       <workItem from="1667848380791" duration="7707000" />
       <workItem from="1667858474705" duration="2016000" />
-      <workItem from="1667861544742" duration="3776000" />
+      <workItem from="1667861544742" duration="4380000" />
+      <workItem from="1667873590728" duration="331000" />
     </task>
     <servers />
   </component>
