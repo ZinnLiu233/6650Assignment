@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b58cb135-0bb8-41f9-aab7-95a6c7877ba2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../A3/A3Server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../A1/A1Client/src/main/java/part1/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../A1/A1Client/src/main/java/part1/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Gy8jKjv3uEzglBgwliZTkeuswm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -53,7 +55,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
@@ -167,7 +169,7 @@
       <workItem from="1668412275987" duration="206000" />
       <workItem from="1668471481341" duration="650000" />
       <workItem from="1669002434920" duration="717000" />
-      <workItem from="1669507738971" duration="972000" />
+      <workItem from="1669507738971" duration="3002000" />
     </task>
     <servers />
   </component>

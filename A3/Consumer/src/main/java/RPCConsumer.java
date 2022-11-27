@@ -9,10 +9,18 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.exceptions.JedisConnectionException;
 
 public class RPCConsumer{
   private final static String QUEUE = "rmq_queue";
@@ -33,6 +41,12 @@ public class RPCConsumer{
     // try connection
     connection = factory.newConnection();
 
+    // Jedis-pool config
+    JedisPoolConfig poolConfig = new JedisPoolConfig();
+    poolConfig.setMaxTotal(256);
+    JedisPool jedisPool = new JedisPool(poolConfig, "127.0.0.1", 6379, 2000);
+    System.out.println("connect to Redis");
+
     //AWS AMI, target group, elb
 
     Runnable runnable = new Runnable() {
@@ -47,20 +61,57 @@ public class RPCConsumer{
           // call back function
           DeliverCallback deliverCallback = (consumerTag, delivery) ->{
             String msg = new String(delivery.getBody(), StandardCharsets.UTF_8);
-//            System.out.println(msg);
-
+            // {"skierId":16668,"time":218,"liftId":39,"waitTime":0,"resortID":10,"seasonID":2022,"dayID":1,"vertical":390}
+            /*
+            “For skier N, how many days have they skied this season?”
+            “For skier N, what are the vertical totals for each ski day?” (calculate vertical as liftID*10)
+            “For skier N, show me the lifts they rode on each ski day”
+            “How many unique skiers visited resort X on day N?”
+             */
             JsonObject jsonObject = gson.fromJson(msg, JsonObject.class);
-            Integer skierId = Integer.valueOf(String.valueOf(jsonObject.get("skierId")));
+            String skierId = String.valueOf(jsonObject.get("skierId"));
+            Integer vertical = Integer.valueOf(String.valueOf(jsonObject.get("vertical")));
+            Integer liftId = Integer.valueOf(String.valueOf(jsonObject.get("liftId")));
+            String resortId = String.valueOf(jsonObject.get("resortId"));
+            String dayId = String.valueOf(jsonObject.get("dayId"));
             System.out.println(jsonObject);
+            try (Jedis jedis = jedisPool.getResource()) {
+              // get skierId from jedis
+              // skier Info
+              try{
+                if(jedis.exists(skierId)){
+                  // update vertical
+                  Integer verticalUpdate = Integer.parseInt(jedis.hget(skierId, "vertical")) + vertical;
+                  jedis.hset(skierId, "vertical", String.valueOf(verticalUpdate));
 
-            // put key and values into map
-            if(map.containsKey(skierId)){
-              map.get(skierId).add(jsonObject);
-            }else{
-              List<JsonObject> values = new ArrayList<>();
-              values.add(jsonObject);
-              map.put(skierId, values);
+                  // update lift
+                  Integer liftUpdate = Integer.parseInt(jedis.hget(skierId, "lifts")) + liftId;
+                  jedis.hset(skierId, "lifts", String.valueOf(liftUpdate));
+
+                }else{
+                  jedis.hset(skierId, "days", "1");
+                  jedis.hset(skierId, "vertical", String.valueOf(vertical));
+                  jedis.hset(skierId, "lifts", String.valueOf(liftId));
+                  jedis.hset(skierId, "resort", resortId);
+                }
+                // add skierId to set of resortId for day1
+                String resort = "resort" + resortId;
+                jedis.sadd(resort, skierId);
+
+              }catch (JedisConnectionException exception){
+                exception.printStackTrace();
+              }
+            }catch (JedisConnectionException exception){
+              exception.printStackTrace();
             }
+//            // put key and values into map
+//            if(map.containsKey(skierId)){
+//              map.get(skierId).add(jsonObject);
+//            }else{
+//              List<JsonObject> values = new ArrayList<>();
+//              values.add(jsonObject);
+//              map.put(skierId, values);
+//            }
             channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
           };
           channel.basicConsume(QUEUE, false, deliverCallback, consumerTag -> {});

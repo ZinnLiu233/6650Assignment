@@ -24,7 +24,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class SkierThread extends Thread{
   private int skierStartId;
   private int skierEndId;
-  private int resortId;
+  private int resortRange;
   private String seasonId;
   private String dayId;
   private int startTime;
@@ -45,7 +45,7 @@ public class SkierThread extends Thread{
       String baseUrl) {
     this.skierStartId = skierStartId;
     this.skierEndId = skierEndId;
-    this.resortId = resortId;
+    this.resortRange = resortId;
     this.seasonId = seasonId;
     this.dayId = dayId;
     this.startTime = startTime;
@@ -116,6 +116,7 @@ public class SkierThread extends Thread{
     int skierId = getRandomRange(skierStartId, skierEndId + 1);
     int time = getRandomRange(startTime, endTime + 1);
     int liftId = getRandomRange(0, liftNum + 1);
+    int resortId = getRandomRange(1, resortRange + 1);
 
     // start a new liftride
     LiftRide liftRide = new LiftRide();
