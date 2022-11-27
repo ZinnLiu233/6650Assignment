@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2407416b-8cc2-42da-a7ac-aa1e458dfedd" name="Changes" comment="" />
+    <list default="true" id="2407416b-8cc2-42da-a7ac-aa1e458dfedd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../A3/A3Server/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +92,7 @@
       <workItem from="1667861544742" duration="4380000" />
       <workItem from="1667873590728" duration="331000" />
       <workItem from="1669002554329" duration="1182000" />
-      <workItem from="1669507739425" duration="1181000" />
+      <workItem from="1669507739425" duration="1526000" />
     </task>
     <servers />
   </component>
