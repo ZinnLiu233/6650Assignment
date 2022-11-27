@@ -75,7 +75,7 @@ public class SkierServlet extends HttpServlet {
                 responseContent.addProperty("waitTime", liftRide.getWaitTime());
                 responseContent.addProperty("resortId", Integer.valueOf(urlParts[1]));
                 responseContent.addProperty("seasonId", Integer.valueOf(urlParts[3]));
-                responseContent.addProperty("dayId", Integer.valueOf(urlParts[5]));
+                responseContent.addProperty("dayID", Integer.valueOf(urlParts[5]));
                 responseContent.addProperty("skierId", Integer.valueOf(urlParts[7]));
                 responseContent.addProperty("vertical", liftRide.getLiftID()*10);
                 Channel channel = null;

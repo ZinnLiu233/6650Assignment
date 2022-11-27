@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="A3Server:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/A3Server_war</output-path>
+    <root id="archive" name="A3Server_war.war">
+      <element id="artifact" artifact-name="A3Server:war exploded" />
+    </root>
+  </artifact>
+</component>

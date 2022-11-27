@@ -35,7 +35,7 @@ public class Client {
   private static final String seasonId = "2022";
   private static final String dayId = "1";
 
-  private static final int numTotalPosts = 2000;
+  private static final int numTotalPosts = 200000;
   private static final int numSinglePosts = 1000;
   private static BlockingQueue<ResponseRecord> responseRecords = new ArrayBlockingQueue<>(numTotalPosts);
   private static BlockingQueue<SkierThread> allThreads =  new ArrayBlockingQueue<>(300);
@@ -46,6 +46,7 @@ public class Client {
   private static final String lbUrl = "http://my-alb-471157435.us-west-2.elb.amazonaws.com:8080/A2ServerV1_war";
 
   private static final String baseUrl3 = "http://localhost:8080/A3Server_war_exploded/";
+  private static final String ec2Url3 = " A3Server_war/";
   // http://35.93.3.155:8080/A1Server_war/skiers/12/seasons/2019/day/1/skier/123
 
   public static CSVWriter csvWriter;
@@ -80,7 +81,7 @@ public class Client {
 
         SkierThread skierThread = new SkierThread(numSkierMin, numSkierMax, numResort, seasonId,
             dayId, 0, 360, numSinglePosts, numLift, singleCountDown, totalCountDown,
-            responseRecords, baseUrl3);
+            responseRecords, ec2Url3);
         // enough for sending post
         if(totalCountDown == null){
           break;

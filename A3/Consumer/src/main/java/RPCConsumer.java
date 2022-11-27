@@ -21,6 +21,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 import redis.clients.jedis.exceptions.JedisConnectionException;
+import redis.clients.jedis.exceptions.JedisDataException;
 
 public class RPCConsumer{
   private final static String QUEUE = "rmq_queue";
@@ -32,7 +33,7 @@ public class RPCConsumer{
     // init the factory
     ConnectionFactory factory = new ConnectionFactory();
     // factory.setHost("18.237.28.211");
-    factory.setHost("localhost");
+    factory.setHost("54.245.143.213");
     factory.setPort(5672);
     factory.setUsername("guest");
     factory.setPassword("guest");
@@ -44,7 +45,7 @@ public class RPCConsumer{
     // Jedis-pool config
     JedisPoolConfig poolConfig = new JedisPoolConfig();
     poolConfig.setMaxTotal(256);
-    JedisPool jedisPool = new JedisPool(poolConfig, "127.0.0.1", 6379, 2000);
+    JedisPool jedisPool = new JedisPool(poolConfig, "localhost", 6379, 2000);
     System.out.println("connect to Redis");
 
     //AWS AMI, target group, elb
@@ -73,32 +74,38 @@ public class RPCConsumer{
             Integer vertical = Integer.valueOf(String.valueOf(jsonObject.get("vertical")));
             Integer liftId = Integer.valueOf(String.valueOf(jsonObject.get("liftId")));
             String resortId = String.valueOf(jsonObject.get("resortId"));
-            String dayId = String.valueOf(jsonObject.get("dayId"));
-            System.out.println(jsonObject);
+            String dayId = String.valueOf(jsonObject.get("dayID"));
+            // System.out.println(jsonObject);
             try (Jedis jedis = jedisPool.getResource()) {
               // get skierId from jedis
               // skier Info
               try{
-                if(jedis.exists(skierId)){
-                  // update vertical
-                  Integer verticalUpdate = Integer.parseInt(jedis.hget(skierId, "vertical")) + vertical;
-                  jedis.hset(skierId, "vertical", String.valueOf(verticalUpdate));
-
-                  // update lift
-                  Integer liftUpdate = Integer.parseInt(jedis.hget(skierId, "lifts")) + liftId;
-                  jedis.hset(skierId, "lifts", String.valueOf(liftUpdate));
-
-                }else{
-                  jedis.hset(skierId, "days", "1");
-                  jedis.hset(skierId, "vertical", String.valueOf(vertical));
-                  jedis.hset(skierId, "lifts", String.valueOf(liftId));
-                  jedis.hset(skierId, "resort", resortId);
-                }
+//                if(jedis.exists(skierId)){
+////                  // update vertical
+////                  Map<String, String> fields = jedis.hgetAll(skierId);
+////                  System.out.println(fields);
+////
+////                  Integer verticalOrigin = Integer.valueOf(jedis.hget(skierId, "vertical"));
+////                  Integer verticalUpdate = verticalOrigin + vertical;
+////                  jedis.hset(skierId, "vertical", String.valueOf(verticalUpdate));
+////
+////                  // update lift
+////                  Integer liftOrigin = Integer.valueOf(jedis.hget(skierId, "lifts"));
+////                  Integer liftUpdate = liftOrigin + liftId;
+////                  jedis.hset(skierId, "lifts", String.valueOf(liftUpdate));
+//
+//                }else{
+//
+//                }
+                jedis.hset(skierId, "days", dayId);
+                jedis.hset(skierId, "vertical", String.valueOf(vertical));
+                jedis.hset(skierId, "lifts", String.valueOf(liftId));
+                jedis.hset(skierId, "resort", resortId);
                 // add skierId to set of resortId for day1
                 String resort = "resort" + resortId;
                 jedis.sadd(resort, skierId);
 
-              }catch (JedisConnectionException exception){
+              }catch (JedisDataException exception){
                 exception.printStackTrace();
               }
             }catch (JedisConnectionException exception){
@@ -122,7 +129,7 @@ public class RPCConsumer{
       }
     };
 
-    for(int i = 0; i < 32; i ++){
+    for(int i = 0; i < 256; i ++){
       Thread thread = new Thread(runnable);
       thread.start();
     }
