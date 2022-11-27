@@ -10,8 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b58cb135-0bb8-41f9-aab7-95a6c7877ba2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../A3/Consumer/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Consumer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Consumer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Consumer/src/main/java/org/RPCConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Consumer/src/main/java/org/RPCConsumer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +168,8 @@
       <workItem from="1667873923531" duration="660000" />
       <workItem from="1668412275987" duration="206000" />
       <workItem from="1668471481341" duration="650000" />
+      <workItem from="1669002434920" duration="717000" />
+      <workItem from="1669507738971" duration="605000" />
     </task>
     <servers />
   </component>
@@ -184,61 +186,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SkierServlet.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SkierServlet.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SkierServlet.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SkierServlet.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SkierServlet.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SkierServlet.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SkierServlet.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SkierServlet.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SkierServlet.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/SkierServlet.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
